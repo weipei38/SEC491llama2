@@ -5,6 +5,14 @@ import os
 # App title
 st.set_page_config(page_title="🦙💬 Llama 2 Chatbot")
 
+api_token = os.environ.get('REPLICATE_API_TOKEN')
+
+if api_token:
+    # Use the secret token
+    st.write("API Token:", api_token)
+else:
+    st.error("API Token not found.")
+
 # Replicate Credentials
 with st.sidebar:
     st.title('🦙💬 Llama 2 Chatbot')
